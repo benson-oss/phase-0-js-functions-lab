@@ -1,46 +1,27 @@
-
 function calculateTax(amount) {
-  let tax = amount * 0.10;
-  console.log("Tax is:", tax);
+  return amount * 0.10;
 }
 
-calculateTax(100);
-
-
-function convertToUpperCase(text) {
-    let name = text;
-    let upperName = name.toUpperCase(); 
-    console.log(upperName);            
-    return upperName;                   
+function convertToUpperCase(str) {
+  return str.toUpperCase();
 }
-convertToUpperCase("text"); 
 
 function findMaximum(num1, num2) {
-  if (num1 > num2) {
-    return num1;
-  } else {
-    return num2;
-  }
-}
-console.log(findMaximum(10, 20)); 
-console.log(findMaximum(50, 25));
-
-function isPalindrome(word) {
-  let reversed = word.split("").reverse().join(""); 
-  return word === reversed;
+  return num1 > num2 ? num1 : num2;
 }
 
-
-console.log(isPalindrome("madam"));   
-console.log(isPalindrome("benson")); 
+function isPalindrome(str) {
+  return str === str.split('').reverse().join('');
+}
 
 function calculateDiscountedPrice(originalPrice, discountPercentage) {
-  let discount = (originalPrice * discountPercentage) / 100;
-  let finalPrice = originalPrice - discount;
-  return finalPrice;
+  return originalPrice - (originalPrice * discountPercentage / 100);
 }
-console.log(calculateDiscountedPrice(100, 20)); 
-console.log(calculateDiscountedPrice(250, 15));
 
-// This is required for the test to function properly  
-module.exports = { calculateTax, convertToUpperCase, findMaximum, isPalindrome, calculateDiscountedPrice };
+module.exports = {
+  convertToUpperCase,
+  calculateTax,
+  findMaximum,
+  isPalindrome,
+  calculateDiscountedPrice
+};
